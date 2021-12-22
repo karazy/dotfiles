@@ -126,6 +126,9 @@ source ~/.shell-aliases
 source ~/.shell-motd
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
- source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
- PS1='$(kube_ps1)'$PS1
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
+# Krew kubectl package manager
+PATH=/Users/de106017/.krew/bin:/usr/local/opt/mysql-client/bin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/Users/de106017/.nodenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:/Users/de106017/.scripts
