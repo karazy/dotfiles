@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-eval "$(nodenv init -)"
+# eval "$(nodenv init -)"
 
 
 #eval export PATH="/Users/reifschneider/.jenv/shims:${PATH}"
@@ -131,4 +131,7 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 # Krew kubectl package manager
-PATH=/Users/de106017/.krew/bin:/usr/local/opt/mysql-client/bin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/Users/de106017/.nodenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:/Users/de106017/.scripts
+PATH=/Users/de106017/.krew/bin:/usr/local/opt/mysql-client/bin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:/Users/de106017/.scripts
+# /Users/de106017/.nodenv/shims:
+export N_PREFIX=$HOME/.node_versions
+PATH=$PATH:$HOME/.node_versions/bin

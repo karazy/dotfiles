@@ -38,3 +38,5 @@ function kc-deploy-res() {
 }
 
 alias cpu-temp='pmset -g thermlog'
+
+alias pip=pip3
