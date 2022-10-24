@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/de106017/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -23,17 +23,16 @@ ZSH_THEME="robbyrussell"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -45,6 +44,9 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -97,13 +99,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# eval "$(nodenv init -)"
 
-
-#eval export PATH="/Users/reifschneider/.jenv/shims:${PATH}"
 export JENV_SHELL=zsh
 export JENV_LOADED=1
 unset JAVA_HOME
+
 #source '/usr/local/Cellar/jenv/0.5.3/libexec/libexec/../completions/jenv.zsh'
 #jenv rehash 2>/dev/null
 jenv() {
@@ -121,17 +121,23 @@ jenv() {
   esac
 }
 
+
 export PATH=$PATH:~/.scripts
 source ~/.shell-aliases
 source ~/.shell-motd
+
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 # Krew kubectl package manager
-PATH=/Users/de106017/.krew/bin:/usr/local/opt/mysql-client/bin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:/Users/de106017/.scripts
-# /Users/de106017/.nodenv/shims:
+PATH=/Users/$HOME/.krew/bin:/usr/local/opt/mysql-client/bin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:/Users/de106017/.scripts
+# /Users/$HOME/.nodenv/shims:
 export N_PREFIX=$HOME/.node_versions
 PATH=$PATH:$HOME/.node_versions/bin
+export KUBECONFIG="${KUBECONFIG}:${HOME}/.kube/config:${HOME}/.kube/cm-cloud-dev:${HOME}/.kube/cm-cloud-stage:${HOME}/.kube/cm-cloud-prod"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
