@@ -13,4 +13,4 @@ case "$OSTYPE" in
 esac
 
 
-curl -fsSL https://raw.githubusercontent.com/karazy/dotfiles/master/Makefile | make -f -
+curl -fsSL https://raw.githubusercontent.com/karazy/dotfiles/main/Makefile | make -f -
