@@ -52,3 +52,18 @@ function install-krew() {
   ./"${KREW}" install krew
   )
 }
+
+function configure-brew() {
+    echo '# Set PATH, MANPATH, etc., for Homebrew.' >> /Users/freifschne001/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/freifschne001/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+}
+
+function install_ohmyzsh() {
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
+
+function resetDotfilesOrigin() {
+  .f remote remove origin || true
+  .f remote add origin git@github.com:karazy/dotfiles.git
+}

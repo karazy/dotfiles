@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git kube-ps1)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,23 +121,27 @@ jenv() {
   esac
 }
 
+#Configure brew
+# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH=$PATH:~/.scripts
 source ~/.shell-aliases
 source ~/.shell-motd
 
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 # Krew kubectl package manager
-PATH=/Users/$HOME/.krew/bin:/usr/local/opt/mysql-client/bin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:/Users/de106017/.scripts
+PATH="$PATH:/Users/$HOME/.krew/bin:/usr/local/opt/mysql-client/bin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/kitty.app/Contents/MacOS:/Users/de106017/.scripts"
 # /Users/$HOME/.nodenv/shims:
 export N_PREFIX=$HOME/.node_versions
 PATH=$PATH:$HOME/.node_versions/bin
 export KUBECONFIG="${KUBECONFIG}:${HOME}/.kube/config:${HOME}/.kube/cm-cloud-dev:${HOME}/.kube/cm-cloud-stage:${HOME}/.kube/cm-cloud-prod"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$PATH:/opt/homebrew/bin/"
