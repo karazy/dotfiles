@@ -243,10 +243,12 @@ help: ## Displays this help
 slideshow:
 	docker run --rm -p 1948:1948 -v $$(pwd)/:/slides webpronl/reveal-md:latest /slides/ --theme serif --separator "^\n\n\n" --vertical-separator "^\n\n"
 
-.PHONY: config-darwin-dock
-config-darwin-dock:
+.PHONY: macos-defaults
+macos-defaults:
 	defaults write com.apple.dock orientation right
 	defaults write com.apple.dock autohide -bool true
 	defaults write com.apple.dock autohide-delay -float 0.5
 	defaults write com.apple.dock static-only -bool true
+	defaults write com.apple.dock "expose-group-by-app" -bool true
+	defaults write com.apple.dock mcx-expose-disabled -bool FALSE
 	killall Dock

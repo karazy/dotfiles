@@ -52,6 +52,7 @@ cask "lens"
 cask "dbeaver-community"
 cask "drawio"
 cask "google-chat"
+cask "obsidian"
 
 mas "Pixelmator Pro", id: 1289583905
 mas "BetterSnapTool", id: 417375580
