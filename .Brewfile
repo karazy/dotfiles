@@ -53,6 +53,7 @@ cask "dbeaver-community"
 cask "drawio"
 cask "google-chat"
 cask "obsidian"
+cask "jetbrains-toolbox"
 
 mas "Pixelmator Pro", id: 1289583905
 mas "BetterSnapTool", id: 417375580
