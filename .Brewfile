@@ -29,6 +29,8 @@ brew "ffmpeg"
 brew "gifsicle"
 brew "helmfile"
 brew "glab"
+brew "dive"
+brew "btop"
 
 cask "docker"
 cask "firefox"

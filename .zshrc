@@ -130,8 +130,8 @@ source ~/.shell-aliases
 source ~/.shell-motd
 
 
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+#source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+#source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
@@ -143,6 +143,9 @@ PATH="$PATH:/Users/$HOME/.krew/bin:/usr/local/opt/mysql-client/bin:/usr/local/Ca
 # /Users/$HOME/.nodenv/shims:
 export N_PREFIX=$HOME/.node_versions
 PATH=$PATH:$HOME/.node_versions/bin
-export KUBECONFIG="${KUBECONFIG}:${HOME}/.kube/config:${HOME}/.kube/cm-cloud-dev:${HOME}/.kube/cm-cloud-stage:${HOME}/.kube/cm-cloud-prod"
+# export KUBECONFIG="${KUBECONFIG}:${HOME}/.kube/config:${HOME}/.kube/cm-cloud-dev:${HOME}/.kube/cm-cloud-stage:${HOME}/.kube/cm-cloud-prod"
+export KUBECONFIG="${HOME}/.kube/cm-cdc-stage:${HOME}/.kube/config:${HOME}/.kube/cm-cloud-dev:${HOME}/.kube/cm-cloud-stage:${HOME}/.kube/cm-cloud-prod"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$PATH:/opt/homebrew/bin/"
+# Secretive Config
+# export SSH_AUTH_SOCK=/Users/freifschne001/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
