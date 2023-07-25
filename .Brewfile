@@ -31,6 +31,8 @@ brew "helmfile"
 brew "glab"
 brew "dive"
 brew "btop"
+brew "tree"
+brew "hugo"	
 
 cask "docker"
 cask "firefox"
