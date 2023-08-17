@@ -33,6 +33,7 @@ brew "dive"
 brew "btop"
 brew "tree"
 brew "hugo"	
+brew "kubeval"
 
 cask "docker"
 cask "firefox"
